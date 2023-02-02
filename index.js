@@ -4,6 +4,14 @@ let comment = document.getElementById("para1")
 let cardDisplay = document.getElementById("myCard1")
 let mysum = document.getElementById("mysum")
 
+let details = {
+    name: "Okey",
+    value: 145
+}
+let myValue =document.getElementById("player")
+myValue.textContent =details.name + ": $" + details.value
+
+
 function randnum(){
     let myRandom = Math.floor(Math.random()*13)+1
     return myRandom
@@ -35,7 +43,8 @@ function renderCards(){
         }
         mysum.textContent = "Sum: " + sumCards
         comment.textContent = "Congratulations! you've Won"
-        hasWon = true
+        hasWon = true;
+        
     }
     
     else{
