@@ -1,4 +1,5 @@
 isAlive = false
+hasWon = false
 let comment = document.getElementById("para1")
 let cardDisplay = document.getElementById("myCard1")
 let mysum = document.getElementById("mysum")
@@ -34,7 +35,7 @@ function renderCards(){
         }
         mysum.textContent = "Sum: " + sumCards
         comment.textContent = "Congratulations! you've Won"
-        
+        hasWon = true
     }
     
     else{
@@ -44,14 +45,16 @@ function renderCards(){
         }
         mysum.textContent = "Sum: " + sumCards
         comment.textContent = "you're out of the game"
+        isAlive = false
     }
 }
 
 function newCard(){
+    if(isAlive && !hasWon){
     let card3 = randnum()
     allCards.push(card3)
     sumCards+= card3
     mysum.textContent = "Sum: " + sumCards
     renderCards()
-
+}
 }
